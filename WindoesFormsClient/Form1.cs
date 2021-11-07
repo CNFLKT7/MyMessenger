@@ -38,7 +38,7 @@ namespace WindoesFormsClient
             if ((UserName.Length > 1) && (UserName.Length > 1))
             {
                 MyMessenger.Message msg = new MyMessenger.Message(UserName, Message, DateTime.Now);
-                API.SendMessage(msg);
+                API.SendMessageRestSharp(msg);
             }
         }
 
