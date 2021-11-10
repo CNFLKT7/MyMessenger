@@ -9,8 +9,8 @@
     <Grid>
         <ListBox x:Name="MessagesLB" HorizontalAlignment="Left" Height="285" Margin="10,10,0,0" VerticalAlignment="Top" Width="773"/>
         <TextBox x:Name="UserNameTB" HorizontalAlignment="Left" Height="24" Margin="10,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
-        <TextBox x:Name="MessageTB" HorizontalAlignment="Left" Height="22" Margin="10,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="577"/>
-        <Button Content="Отправить" HorizontalAlignment="Left" Margin="639,340,0,0" VerticalAlignment="Top" Width="144" Height="71"/>
+        <TextBox x:Name="MessageTB" HorizontalAlignment="Left" Height="22" Margin="10,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="577"/>
+        <Button Content="Отправить" HorizontalAlignment="Left" Margin="639,326,0,0" VerticalAlignment="Top" Width="144" Height="71" Click="Button_Click"/>
 
     </Grid>
 </Window>
