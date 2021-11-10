@@ -1,4 +1,5 @@
 ﻿using System;
+using MyMessenger;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,14 +23,43 @@ namespace UWPClient
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private static int MessageID;
+        private static string UserName;
+        private static MessengerClientAPI API = new MessengerClientAPI();
+        DispatcherTimer timer;
+
         public MainPage()
         {
             this.InitializeComponent();
+            timer = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 1) };
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
 
+        private void Timer_Tick(object sender, object e)
+        {
+            Message msg = API.GetMessage(MessageID);
+            while (msg != null)
+            {
+                MessagesLB.Items.Add(msg);
+                MessageID++;
+                msg = API.GetMessage(MessageID);
+            }
+        }
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string UserName = UserNameTB.Text;
+            string Message = MessageTB.Text;
+            if((UserName.Length > 1) && (UserName.Length > 1))
+            {
+                Message msg = new Message(UserName, Message, DateTime.Now);
+                API.SendMessage(msg);
+            }
         }
     }
 }

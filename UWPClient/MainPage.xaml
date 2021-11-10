@@ -9,10 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Margin="10,0,0,0">
-        <Button Content="Отправить" Margin="478,321,0,0" VerticalAlignment="Top" Height="54" Width="117" RenderTransformOrigin="0.52,0.506"/>
-        <ListBox Margin="10,10,895,710" SelectionChanged="ListBox_SelectionChanged"/>
+        <Button Content="Отправить" Margin="478,321,0,0" VerticalAlignment="Top" Height="54" Width="117" RenderTransformOrigin="0.52,0.506" Click="Button_Click"/>
         <TextBox x:Name="UserNameTB" HorizontalAlignment="Left" Margin="10,332,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="397"/>
         <TextBox x:Name="MessageTB" HorizontalAlignment="Left" Margin="10,394,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="585"/>
+        <ListBox x:Name="MessagesLB" Margin="10,10,895,710" SelectionChanged="ListBox_SelectionChanged"/>
 
     </Grid>
 </Page>
